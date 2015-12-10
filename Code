@@ -1,0 +1,114 @@
+=begin 
+This is a choose-your-own adventure project, tested with the codeacademy labs application. 
+If an area has a comment, it applies to the above line of code. 
+=end
+
+
+def wrap(s, width=78)
+      s.gsub(/(.{1,#{width}})(\s+|\Z)/, "\\1\n")
+    end
+# Credits to The Ruby Cookbook for the above piece of code.
+    
+$coincount = 0
+$ending = 0
+$medicine = 0
+# Global Variables used to change the paths that the player is taken down.
+
+while $ending != 1
+print wrap("\n \n You find yourself in a small town. It is raining, and you are weary after a long day. Down the road from you there is a shop, an inn, and a pub. Where would you like to go? Select SHOP, INN, or PUB?", 80)
+while choice1 = gets.chomp
+    case choice1
+    when "PUB", "pub", "Pub"
+# Programmed to accept the most-expected variations of the answer 'pub'
+        if $coincount > 0
+# Determines if the coin from the pub has already been earned, and switches the path accordingly.
+        puts wrap("\n You step up to the door of the pub, but it is shut tight. Through the window you can see two men on the floor in the middle of a terrible brawl. Better not get involved. You turn around.", 80)
+        break
+        end
+        puts wrap("\n You step into the pub. It looks like the grand majority of the residents of the town have decided to stay here for the night, and they are a very rowdy crowd. There is absolutely no space to squeeze in in front of the bar, where a frazzled tavernkeeper looks at about the end of her limit. The only available seat is next to a GOBLIN, who looks at you with interest. You realize that your only option if you want to be serviced is to sit next to him and hope that one of the staff will notice you. Sit next to the GOBLIN, or go BACK outside?", 80 )
+        PUBCHOICE = gets.chomp
+        case PUBCHOICE
+        when "GOBLIN", "Goblin", "goblin"
+            puts wrap("\n The goblin looks at you. 'Are you up for a game?' he asks. You nod yes, since you did sit down next to him and all. A grin crosses his cracked lips, and he flicks a golden coin onto the table. 'If you best me, you win my gold. If you lose, I get to clobber ye'. Since this is a medieval fantasy text adventure, a gold coin is a lot of money, and you readily accept his offer. 'All right,' he says.", 80)
+            puts wrap("\n Poor people have it. Rich people need it. If you eat it, you'll die. What is it?", 80)
+                riddleanswer = gets.chomp
+                case riddleanswer
+                    when "Nothing", "nothing", "NOTHING"
+                        puts wrap("\n The goblin smiles at you. He has very yellow teeth. 'Good choice, kid,' he says, and flicks the coin at you. You can see that the barmaid has disappeared, possibly underneath the counter to have a meltdown because of how rowdy it's getting in here. You're not getting service tonight, you figure, and the crowd is starting to get pretty bad, so you go outside back into the rain.", 80)
+                        $coincount += 1
+                        break
+                    else
+                        puts wrap("\n You can tell from the way he scowls that your answer is wrong. Despite the fact that the creature is less than half your height, when he jumps up on the table and right hooks you in the jaw, it packs a mighty whallop. You fly out of your chair and onto the ground, unconscious, and end up passed there for the night. END.", 80)        
+                    end
+        break
+        when "BACK", "back", "Back"
+            puts wrap("\n You decide you don't want to be in the tavern whilst it's so busy and turn to head back outside. However, as you turn to leave, you catch the eye of a drunkard and he decides you looked at him crossways. You are drawn into a brawl. The constable arrives shortly, and as you are new to town, he believes your assailant-- a fine upstanding gentleman, and also his son-- when he claims that you started it. You are thrown in jail, where you spend the night. END.", 80)
+        break
+        else
+        puts wrap("\n You decide the best course of action is to be really indecisive. We can all wait while you choose between the GOBLIN or going BACK outside.", 80)
+        end
+    break
+    
+    when "INN", "inn", "Inn" 
+    if $medicine > 0
+    # Determines whether the user has the medicine for the ill man, and branches accordingly.
+        puts wrap("\n You step toward the inn. However, there is a man standing in front of it blocking your path. He is obviously very sick, and puking up a storm. You ask him to move, but he can't hear you over his retching. He blindly mutters something about 'medicine'. You remember the vial that you got from the shop, and hold it out to him.", 80)
+    puts wrap("\n He seizes it from your hand and downs it in one gulp, gagging at the apparent taste. You feel briefly guilty because you have no idea what you just gave him. It could be poison. It looks like poison when he vomits a few more times, in fact, but after that he seems to start feeling better. He smiles at you, and wipes his mouth, and thanks you, and then runs off toward the pub to drink some more. You decide not to be out here when he comes back.", 80)
+	puts wrap("\n Your path now free, you head into the inn. The innkeeper smiles at you like you're an old friend. In fact, you are, but that's a story for another medieval choose your own adventure game! He sets you up with a room key, and you head up to your room. FINALLY, you can get some rest!", 80)
+	puts wrap("\n You got the good ending! Congrats! 8D", 80)
+	$ending += 1
+        break
+    else
+        puts wrap("\n You step toward the inn. However, there is a man standing in front of it blocking your path. He is obviously very sick, and puking up a storm. You ask him to move, but he  can't hear you over his retching. He blindly mutters something about 'medicine', but you have none on you. You decide to turn back for now.", 80)
+    break
+    end
+    
+    when "SHOP", "shop", "Shop"
+    if $medicine > 0
+    # Determines if the medicine has already been purchased, and branches accordingly.
+        puts wrap("\n There is not a chance in hell that you'll go back in there. You don't know why the thought entered your mind.", 80)
+        break
+        end
+    if $coincount > 0 
+    # Determines if the user has money on them, and branches accordingly.
+    puts wrap("\n You step into the shop. It's late, and at first you think that the shopkeeper, likely some kind old gentleman, has just retired for the night and forgot to turn the 'open' sign to 'closed' and lock the door. A bit of investigating reveals that that is not the case. There is no shopkeeper-- at least, no live shopkeeper. There is a splatter of blood across the counter, and when you make the unwise decision to peer over it, you see that there is a rather large dragon perched back there. It looks like a red dragon, but-- wait, no, that's just the blood it's covered in.", 80)
+	puts wrap("\n The dragon seems to notice you after a moment, and it raises its head. You can see that he is wearing glasses splattered with blood. He grins at you. There is flesh in his teeth. 'Well hello,' he says, and he sits back upon his haunches, like some sort of proper gentleman. 'Welcome to my shop. I can smell coin on you. You're here to buy, yes?'", 80)
+	puts wrap("\n You realize that you have a choice to make. You can ASK if the dragon is actually a shopkeeper-- you suspect he isn't--, or you can BUY something and swiftly leave.", 80)
+		SHOPCHOICEDRAGON = gets.chomp
+		case SHOPCHOICEDRAGON
+		when "ASK", "ask", "Ask"
+		puts wrap("\n You clear your throat in nervousness, and decide to try and speak to this reptilian shopkeeper and get a little more information, despite how hungriy he is looking at you. The folks in this town are strange, but worth a good chat. Your words are nervous, and you stutter a little at the sight of his teeth, but eventually you manage to get a question out along the lines of how long he's been in the shopkeeping business. Unfortunately, the dragon seems a bit cranky at being disturbed in the middle of his meal, and isn't one to talk. He bites your head off. END", 80)
+		break
+		when "BUY", "Buy", "buy"
+		puts wrap("\n It's clear that the dragon only wants your money, and unclear as to whether or not he is truly a shopkeeper. You decide against dawdling, and take the coin from your pocket, pressing it onto the counter and gesturing at a green vial on the shelf behind him, stuttering out that that's what you want. You neither know nor care what is inside.", 80)
+		puts wrap("\n The dragon plucks the vial off the shelf with one bloody claw and sets it awkwardly in front of you, snapping up the coin. You take the vial and wipe the blood smeared on it off on your shirt, and then swiftly leave the shop.", 80)
+		$medicine += 1
+		break
+        else 
+        puts wrap("\n The dragon seems to hate impatience. He decides what you will do for you, and leaps over the counter to maul you. END.", 80)
+        end
+	else
+        puts wrap("\n You step into the shop. It's late, and at first you think that the shopkeeper, likely some kind old gentleman, has just retired for the night and forgot to turn the 'open' sign to 'closed' and lock the door. A bit of investigating reveals that that is not the case. There is no shopkeeper-- at least, no live shopkeeper. There is a splatter of blood across the counter, and when you make the unwise decision to peer over it, you see that there is a rather large dragon perched back there. It looks like a red dragon, but-- wait, no, that's just the blood it's covered in.", 80)
+	puts wrap("\n The dragon doesn't seem to notice you, at least for now. Do you ENGAGE it, or BACK away slowly?", 80)
+		SHOPCHOICE1 = gets.chomp
+		case SHOPCHOICE1
+		when "ENGAGE", "Engage", "engage"
+			puts wrap("\n For some reason, you decide to engage the dragon. After all, you've seen stranger things in your travels. For all you know, the dragon is the shopkeeper. And so, in your nicest voice, you clear your throat and ask for service.", 80)
+			puts wrap ("\n The dragon looks at you. He is wearing blood-splattered spectacles, which he reaches a claw up to adjust. 'Oh, are you hear to browse or to buy?' He sniffs at the air, and after a moment, says 'I don't smell any money on you... You must be the dessert I ordered!'. He gives you no time to respond as he leaps over the countertop at you. You are mauled. END.", 80)
+		break
+		when "BACK", "Back", "back"
+			puts wrap("\n You wisely decide that if there's a dragon here running around killing shopkeepers, it may be best to do the cowardly thing rather than the heroic thing and back away slowly to avoid being mauled yourself. Unfortunately, it appears that the shopkeeper hasn't been taking care of the place, and as you backstep, your foot lands on a very squeaky floorboard. The dragon's head pops up and he spots you immediately. You try to run for it, forgetting that he has flame breath. You don't make it to the door. END.", 80)
+		break	
+		else
+			puts wrap("\n You decide to stand around and watch the dragon eat whatever bloody thing he's eating a bit more, because clearly that's a much smarter choice than trying to ENGAGE him or BACK away. Not", 80)	
+		end
+        end
+    break
+    
+    else
+        puts "\n Please select again. SHOP, INN, or PUB?"
+        # Re-prompts for an answer if the user typed something not recognized.
+    end
+    end
+end
+
