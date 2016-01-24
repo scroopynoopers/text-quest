@@ -14,6 +14,9 @@ $ending = 0
 $medicine = 0
 # Global Variables used to change the paths that the player is taken down.
 
+puts "Hark, an adventurere! What is your name?"
+name = gets.chomp
+
 while $ending != 1
 print wrap("\n \n You find yourself in a small town. It is raining, and you are weary after a long day. Down the road from you there is a shop, an inn, and a pub. Where would you like to go? Select SHOP, INN, or PUB?", 80)
 while choice1 = gets.chomp
@@ -54,8 +57,8 @@ while choice1 = gets.chomp
     # Determines whether the user has the medicine for the ill man, and branches accordingly.
         puts wrap("\n You step toward the inn. However, there is a man standing in front of it blocking your path. He is obviously very sick, and puking up a storm. You ask him to move, but he can't hear you over his retching. He blindly mutters something about 'medicine'. You remember the vial that you got from the shop, and hold it out to him.", 80)
     puts wrap("\n He seizes it from your hand and downs it in one gulp, gagging at the apparent taste. You feel briefly guilty because you have no idea what you just gave him. It could be poison. It looks like poison when he vomits a few more times, in fact, but after that he seems to start feeling better. He smiles at you, and wipes his mouth, and thanks you, and then runs off toward the pub to drink some more. You decide not to be out here when he comes back.", 80)
-	puts wrap("\n Your path now free, you head into the inn. The innkeeper smiles at you like you're an old friend. In fact, you are, but that's a story for another medieval choose your own adventure game! He sets you up with a room key, and you head up to your room. FINALLY, you can get some rest!", 80)
-	puts wrap("\n You got the good ending! Congrats! 8D", 80)
+    puts wrap("\n Your path now free, you head into the inn. The innkeeper smiles at you like you're an old friend, clapping you on the back as he cries 'Why hello, #{name}!'. In fact, you are, but that's a story for another medieval choose your own adventure game! He sets you up with a room key, and you head up to your room. FINALLY, you can get some rest!", 80)
+    puts wrap("\n You got the good ending! Congrats! 8D", 80)
 	$ending += 1
         break
     else
@@ -94,13 +97,13 @@ while choice1 = gets.chomp
 		case SHOPCHOICE1
 		when "ENGAGE", "Engage", "engage"
 			puts wrap("\n For some reason, you decide to engage the dragon. After all, you've seen stranger things in your travels. For all you know, the dragon is the shopkeeper. And so, in your nicest voice, you clear your throat and ask for service.", 80)
-			puts wrap ("\n The dragon looks at you. He is wearing blood-splattered spectacles, which he reaches a claw up to adjust. 'Oh, are you hear to browse or to buy?' He sniffs at the air, and after a moment, says 'I don't smell any money on you... You must be the dessert I ordered!'. He gives you no time to respond as he leaps over the countertop at you. You are mauled. END.", 80)
+			puts wrap("\n The dragon looks at you. He is wearing blood-splattered spectacles, which he reaches a claw up to adjust. 'Oh, are you hear to browse or to buy?' He sniffs at the air, and after a moment, says 'I don't smell any money on you... You must be the dessert I ordered!'. He gives you no time to respond as he leaps over the countertop at you. You are mauled. END.", 80)
 		break
 		when "BACK", "Back", "back"
 			puts wrap("\n You wisely decide that if there's a dragon here running around killing shopkeepers, it may be best to do the cowardly thing rather than the heroic thing and back away slowly to avoid being mauled yourself. Unfortunately, it appears that the shopkeeper hasn't been taking care of the place, and as you backstep, your foot lands on a very squeaky floorboard. The dragon's head pops up and he spots you immediately. You try to run for it, forgetting that he has flame breath. You don't make it to the door. END.", 80)
 		break	
 		else
-			puts wrap("\n You decide to stand around and watch the dragon eat whatever bloody thing he's eating a bit more, because clearly that's a much smarter choice than trying to ENGAGE him or BACK away. Not", 80)	
+			puts wrap("\n You decide to stand around and watch the dragon eat whatever bloody thing he's eating a bit more, because clearly that's a much smarter choice than trying to ENGAGE him or BACK away. Not.", 80)	
 		end
         end
     break
@@ -111,4 +114,3 @@ while choice1 = gets.chomp
     end
     end
 end
-
