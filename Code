@@ -48,7 +48,7 @@ while choice1 = gets.chomp
             puts wrap("\n You decide you don't want to be in the tavern whilst it's so busy and turn to head back outside. However, as you turn to leave, you catch the eye of a drunkard and he decides you looked at him crossways. You are drawn into a brawl. The constable arrives shortly, and as you are new to town, he believes your assailant-- a fine upstanding gentleman, and also his son-- when he claims that you started it. You are thrown in jail, where you spend the night. END.", 80)
         break
         else
-        puts wrap("\n You decide the best course of action is to be really indecisive. We can all wait while you choose between the GOBLIN or going BACK outside.", 80)
+        puts wrap("\n You decide the best course of action is to be really indecisive. Unfortunately, the bar is a business, and a barmaiden who's much stronger than she looks throws you out the door in the mud, telling you to come back when you're intent on doing something other than taking up space.", 80)
         end
     break
     
@@ -59,7 +59,7 @@ while choice1 = gets.chomp
     puts wrap("\n He seizes it from your hand and downs it in one gulp, gagging at the apparent taste. You feel briefly guilty because you have no idea what you just gave him. It could be poison. It looks like poison when he vomits a few more times, in fact, but after that he seems to start feeling better. He smiles at you, and wipes his mouth, and thanks you, and then runs off toward the pub to drink some more. You decide not to be out here when he comes back.", 80)
     puts wrap("\n Your path now free, you head into the inn. The innkeeper smiles at you like you're an old friend, clapping you on the back as he cries 'Why hello, #{name}!'. In fact, you are, but that's a story for another medieval choose your own adventure game! He sets you up with a room key, and you head up to your room. FINALLY, you can get some rest!", 80)
     puts wrap("\n You got the good ending! Congrats! 8D", 80)
-	$ending += 1
+    $ending += 1
         break
     else
         puts wrap("\n You step toward the inn. However, there is a man standing in front of it blocking your path. He is obviously very sick, and puking up a storm. You ask him to move, but he  can't hear you over his retching. He blindly mutters something about 'medicine', but you have none on you. You decide to turn back for now.", 80)
@@ -103,7 +103,7 @@ while choice1 = gets.chomp
 			puts wrap("\n You wisely decide that if there's a dragon here running around killing shopkeepers, it may be best to do the cowardly thing rather than the heroic thing and back away slowly to avoid being mauled yourself. Unfortunately, it appears that the shopkeeper hasn't been taking care of the place, and as you backstep, your foot lands on a very squeaky floorboard. The dragon's head pops up and he spots you immediately. You try to run for it, forgetting that he has flame breath. You don't make it to the door. END.", 80)
 		break	
 		else
-			puts wrap("\n You decide to stand around and watch the dragon eat whatever bloody thing he's eating a bit more, because clearly that's a much smarter choice than trying to ENGAGE him or BACK away. Not.", 80)	
+			puts wrap("\n You decide to stand around and watch the dragon eat whatever bloody thing he's eating a bit more rather than trying to BACK out or ENGAGE him, because clearly that's a much smarter choice than trying to do anything. Or so you think, anyway. Unfortunately, the forces of fate don't agree with you. Apparently, dragons have that same sixth sense that people have when it comes to knowing they're being watched, and his head abruptly snaps up. You don't have time to do anything before he lunges at you and devours you as his second course. END.", 80)	
 		end
         end
     break
